@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/codes', 'HomeController@codes')->name('codes');
 Route::get('/add', 'HomeController@add')->name('add');
 Route::put('/add', 'HomeController@new')->name('new');
+Route::get('/manage', 'HomeController@manage')->name('manage');
+Route::delete('/remove/{account}', 'HomeController@remove')->name('remove');

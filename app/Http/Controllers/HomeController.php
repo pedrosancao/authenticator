@@ -73,4 +73,25 @@ class HomeController extends Controller
 
         return redirect()->route('home')->with('status', __('Successfully added account.'));
     }
+
+    /**
+     * Manage user's accounts.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function manage(Request $request)
+    {
+        $accounts = $request->user()->accounts;
+
+        return view('manage', compact('accounts'));
+    }
+
+    public function remove(Account $account)
+    {
+        $response = [
+            'status' => $account->delete(),
+        ];
+
+        return response()->json($response);
+    }
 }
