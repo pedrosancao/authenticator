@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use Illuminate\Http\Request;
+use PedroSancao\OTP\TOTP;
 
 class HomeController extends Controller
 {
@@ -17,12 +19,58 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the user's codes.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
         return view('home');
+    }
+
+    /**
+     * Load user's codes.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function codes(Request $request)
+    {
+        $codes = $request->user()->accounts->map(function (Account $account) {
+            $otp = TOTP::createRaw($account->secret);
+            return [
+                'name' => $account->name,
+                'code' => $otp->getPassword(),
+            ];
+        });
+
+        return response()->json($codes);
+    }
+
+    /**
+     * Show new account form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function add()
+    {
+        return view('add');
+    }
+
+    /**
+     * Create new authenticator account.
+     *
+     * @param \Illuminate\Http\Request $request
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function new(Request $request)
+    {
+        $otp = TOTP::create($request->get('key'));
+        $request->user()->accounts()->create([
+            'name' => $request->get('name'),
+            'secret' => $otp->getRawSecret(),
+        ]);
+
+        return redirect()->route('home')->with('status', __('Successfully added account.'));
     }
 }
