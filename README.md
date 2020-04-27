@@ -1,9 +1,9 @@
 # Autenticator
 
-Web implementation of One Time Passwordm as in Google Authenticator.
+Web implementation of One Time Password as in Google Authenticator.
 
 Development status: **prototype**.
 
 ## Licence
 
-This library is release under the [MIT licence](LICENCE).
+This project is release under the [MIT licence](LICENCE).
