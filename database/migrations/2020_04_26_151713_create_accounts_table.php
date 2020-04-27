@@ -17,7 +17,7 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->string('secret');
+            $table->binary('secret');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
