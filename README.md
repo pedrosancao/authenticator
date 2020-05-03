@@ -1,6 +1,6 @@
 # Autenticator
 
-Web implementation of One Time Password as in Google Authenticator.
+Web client for Two-Factor Authentication (One Time Password) as is Google Authenticator.
 
 Development status: **prototype**.
 
