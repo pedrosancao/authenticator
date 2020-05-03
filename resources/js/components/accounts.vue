@@ -5,12 +5,12 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
-        <div v-for="(account, index) in accounts" :key="index" class="col-12 col-md-3">
-            <div class="card" @click="copyCode(index)" :ref="'container-' + index">
-                <div class="card-header">{{ account.name }}</div>
+        <div v-for="(account, index) in accounts" :key="index" class="col-12 col-md-3 mb-4">
+            <div class="card" :title="account.name" @click="copyCode(index)" :ref="'container-' + index">
+                <div class="card-header text-truncate">{{ account.name }}</div>
                 <div class="card-body d-flex justify-content-between">
                     <span>{{ account.code.match(/.{1,3}/g).join(' ') }}</span>
-                    <input class="position-fixed" type="text" :value="account.code" :ref="'input-' + index">
+                    <input class="position-absolute" type="text" :value="account.code" :ref="'input-' + index">
                     <clock :radius="10"></clock>
                 </div>
             </div>
