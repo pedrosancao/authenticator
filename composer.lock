@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b8908b43739a5dbde6a9869e225cf6a",
+    "content-hash": "efdbc557bedabd7338213929b6859516",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1385,16 +1385,16 @@
         },
         {
             "name": "pedrosancao/php-otp",
-            "version": "v1.0.1-beta",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pedrosancao/php-otp.git",
-                "reference": "32829aee87a2f01671cd3f4b04d7f2b057fecdf5"
+                "reference": "c3cd9e7e28a7b51fdbfe7072dd31bad60464c859"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pedrosancao/php-otp/zipball/32829aee87a2f01671cd3f4b04d7f2b057fecdf5",
-                "reference": "32829aee87a2f01671cd3f4b04d7f2b057fecdf5",
+                "url": "https://api.github.com/repos/pedrosancao/php-otp/zipball/c3cd9e7e28a7b51fdbfe7072dd31bad60464c859",
+                "reference": "c3cd9e7e28a7b51fdbfe7072dd31bad60464c859",
                 "shasum": ""
             },
             "require": {
@@ -1429,7 +1429,7 @@
                 "totp",
                 "two steps authentication"
             ],
-            "time": "2020-04-26T15:07:10+00:00"
+            "time": "2020-04-28T00:13:13+00:00"
         },
         {
             "name": "pedrosancao/php-random-data",
