@@ -20,11 +20,15 @@
                 connection with the software or the use or other dealings in the software.
             </small></p>
             <div class="d-flex justify-content-around align-items-center my-3">
-                <a class="btn btn-lg btn-block btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
-                @if (Route::has('register'))
-                <span class="mx-3">or</span>
-                <a class="btn btn-lg btn-block btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
-                @endif
+                @guest
+                    <a class="btn btn-lg btn-block btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @if (Route::has('register'))
+                        <span class="mx-3">or</span>
+                        <a class="btn btn-lg btn-block btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    @endif
+                @else
+                    <a class="btn btn-lg btn-block btn-primary" href="{{ route('home') }}">{{ __('Access my codes') }}</a>
+                @endguest
             </div>
             <p>See <a href="https://github.com/pedrosancao/authenticator-client" target="_blank">the project on GitHub</a>.</p>
         </div>
