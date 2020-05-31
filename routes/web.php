@@ -17,7 +17,7 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Auth::routes(array_fill_keys(['register', 'reset', 'confirm'], false));
+Auth::routes(array_fill_keys(['reset', 'confirm'], false));
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/codes', 'HomeController@codes')->name('codes');

@@ -1,6 +1,6 @@
 <template>
     <div class="row justify-content-center">
-        <div class="col-12" v-if="accounts.length == 0 && loading">
+        <div class="col-12 mb-2" v-if="accounts.length == 0 && loading">
             <div class="progress" v-if="accounts.length == 0 && loading">
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
