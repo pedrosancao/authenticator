@@ -7,8 +7,8 @@
             <p>Copyright (c) 2020 Pedro Sanção</p>
             <p>
                 Authenticator is a web client for two-factor authentication, providing aditional
-                layer of security to your accounts on the go. Unless mobile apps it doesn't bind
-                you to a specific device.
+                layer of security to your accounts on the go. Different from mobile apps it doesn't
+                bind you to a specific device.
             </p>
             <p>As part of my professional portifolio it's intended to use as demonstration.</p>
             <p><small>
