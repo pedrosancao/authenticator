@@ -6,7 +6,7 @@
         <div class="col col-md-8">
             <p>Copyright (c) 2020 Pedro Sanção</p>
             <p>
-                Authenticator is a web client for two-factor authentication, providing aditional
+                Authenticator is a web client for two-factor authentication, providing additional
                 layer of security to your accounts on the go. Different from mobile apps it doesn't
                 bind you to a specific device.
             </p>
