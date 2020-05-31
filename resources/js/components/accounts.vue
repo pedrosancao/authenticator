@@ -10,7 +10,7 @@
                 <div class="card-header text-truncate">{{ account.name }}</div>
                 <div class="card-body d-flex justify-content-between">
                     <span>{{ account.code.match(/.{1,3}/g).join(' ') }}</span>
-                    <input class="position-absolute" type="text" :value="account.code" :ref="'input-' + index">
+                    <input class="position-absolute invisible" type="text" :value="account.code" :ref="'input-' + index">
                     <clock :radius="10"></clock>
                 </div>
             </div>
