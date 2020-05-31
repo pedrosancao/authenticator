@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', 'AboutController@index')->name('about');
 
 Auth::routes(array_fill_keys(['reset', 'confirm'], false));
 

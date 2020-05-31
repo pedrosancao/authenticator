@@ -63,6 +63,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+                                <p>By proceding you agree with <a href="{{ route('about') }}" target="_blank">the terms</a>.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
