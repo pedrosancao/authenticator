@@ -5,12 +5,12 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
-        <div v-for="(account, index) in accounts" :key="index" class="col-12 col-md-3 mb-4">
+        <div v-for="(account, index) in accounts" :key="index" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="card" :title="account.name" @click="copyCode(index)" :ref="'container-' + index">
                 <div class="card-header text-truncate">{{ account.name }}</div>
                 <div class="card-body d-flex justify-content-between">
-                    <span>{{ account.code.match(/.{1,3}/g).join(' ') }}</span>
-                    <input class="position-absolute invisible" type="text" :value="account.code" :ref="'input-' + index">
+                    <span class="pr-1">{{ account.code.match(/.{1,3}/g).join(' ') }}</span>
+                    <input class="position-absolute" type="text" :value="account.code" :ref="'input-' + index">
                     <clock :radius="10"></clock>
                 </div>
             </div>
@@ -43,24 +43,30 @@
             copyCode(index) {
                 let container = this.$refs['container-' + index][0]
                 let input = this.$refs['input-' + index][0]
-                let highlightClass = 'border-info'
+                let $code = $('span', container)
                 input.select()
                 document.execCommand('copy')
                 input.blur()
-                container.classList.add(highlightClass)
+                $code.tooltip({
+                    offset: offset => {
+                        offset.reference.right += 20
+                        return offset
+                    },
+                    placement: 'right',
+                    title    : 'Copied',
+                    trigger  : 'manual'
+                }).tooltip('show')
                 setTimeout(() => {
-                    container.classList.remove(highlightClass)
-                }, 1500);
+                    $code.tooltip('dispose')
+                }, 1500)
             }
         }
     }
 </script>
 
 <style scoped>
-.card {
-    transition: border 1s ease;
-}
 input {
+    opacity: 0;
     z-index: -1;
 }
 </style>
